@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ambixous Creator Fellowship, You're In</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:   #0A0A0F;
+    --deep:    #0F0F1A;
+    --purple:  #6C3FC5;
+    --violet:  #8B5CF6;
+    --glow:    #A78BFA;
+    --gold:    #F0C040;
+    --cream:   #FAF7F2;
+    --mist:    #F3EEFF;
+    --soft:    #EDE9FE;
+    --border:  #2A2040;
+    --text:    #1A1035;
+    --muted:   #6B7280;
+    --white:   #FFFFFF;
+    --neon-green: #39FF14;
+  }
+
+  body {
+    background: #EEEAF8;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    padding: 32px 16px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── OUTER WRAPPER ── */
+  .email-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(108,63,197,0.18), 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-orb1 {
+    position: absolute; width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(108,63,197,0.35) 0%, transparent 70%);
+    top: -120px; right: -80px;
+    pointer-events: none;
+  }
+  .hero-orb2 {
+    position: absolute; width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,139,250,0.2) 0%, transparent 70%);
+    bottom: -60px; left: -40px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    padding: 48px 48px 40px;
+    display: flex; flex-direction: column; align-items: flex-start;
+  }
+  .logo-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 40px; width: 100%;
+  }
+  .logo-img {
+    height: 32px; width: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(167,139,250,0.3);
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(108,63,197,0.25);
+    border: 1px solid rgba(167,139,250,0.35);
+    border-radius: 100px; padding: 6px 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--glow);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.6; transform:scale(1.3); }
+  }
+  .hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 48px; font-weight: 900;
+    line-height: 1.08; color: var(--white);
+    margin-bottom: 10px;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--glow);
+  }
+  .hero-subtitle {
+    font-size: 16px; color: rgba(255,255,255,0.55);
+    font-weight: 300; line-height: 1.6; margin-bottom: 36px;
+    max-width: 420px;
+  }
+  .hero-meta-row {
+    display: flex; gap: 24px; flex-wrap: wrap;
+  }
+  .hero-meta {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-meta-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: rgba(108,63,197,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .hero-meta-text { font-size: 13px; color: rgba(255,255,255,0.65); }
+  .hero-meta-text strong { color: var(--white); display: block; font-size: 13px; }
+
+  /* ── CONGRATS BAND ── */
+  .congrats-band {
+    background: linear-gradient(135deg, var(--purple) 0%, #4A1D9E 100%);
+    padding: 32px 48px;
+    position: relative; overflow: hidden;
+  }
+  .congrats-band::before {
+    content: '';
+    position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
+    font-size: 90px; opacity: 0.08; line-height: 1;
+    content: '✦ ✦ ✦';
+    color: white; letter-spacing: 20px;
+  }
+  .congrats-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .congrats-msg {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 700; color: var(--white);
+    line-height: 1.35;
+  }
+  .congrats-msg span { color: var(--gold); }
+
+  /* ── BODY SECTIONS ── */
+  .section { padding: 40px 48px; }
+  .section + .section { border-top: 1px solid #F0EBF8; }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    color: var(--purple); letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(108,63,197,0.3), transparent);
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700;
+    color: var(--text); margin-bottom: 12px; line-height: 1.3;
+  }
+  .section-body {
+    font-size: 15px; color: #3D3558;
+    line-height: 1.75; font-weight: 300;
+  }
+  .section-body strong { font-weight: 600; color: var(--text); }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: flex; gap: 16px; margin: 28px 0 0;
+  }
+  .stat-card {
+    flex: 1; background: var(--mist);
+    border: 1px solid #DDD4F7;
+    border-radius: 16px; padding: 20px 18px;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 900; color: var(--purple);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 6px; font-weight: 500;
+  }
+
+  /* ── TEAMS ── */
+  .teams-grid {
+    display: flex; flex-direction: column; gap: 20px; margin-top: 8px;
+  }
+  .team-card {
+    border-radius: 18px; overflow: hidden;
+    border: 1px solid #E4D9F7;
+  }
+  .team-header {
+    padding: 16px 22px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .team-g1 .team-header { background: linear-gradient(135deg, #1A0B3B 0%, #2D1066 100%); }
+  .team-g2 .team-header { background: linear-gradient(135deg, #0D2340 0%, #1A4D7A 100%); }
+  .team-g3 .team-header { background: linear-gradient(135deg, #0B3326 0%, #1A6B50 100%); }
+  .team-g4 .team-header { background: linear-gradient(135deg, #3B1A08 0%, #7A3A10 100%); }
+
+  .team-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--white);
+  }
+  .team-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+  }
+  .team-members { background: var(--white); }
+  .member-row {
+    display: flex; align-items: center;
+    padding: 13px 22px; gap: 14px;
+    border-bottom: 1px solid #F5F0FE;
+    transition: background 0.2s;
+  }
+  .member-row:last-child { border-bottom: none; }
+  .member-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px; font-weight: 700; color: var(--white);
+    flex-shrink: 0;
+  }
+  .team-g1 .member-avatar { background: linear-gradient(135deg, #6C3FC5, #A78BFA); }
+  .team-g2 .member-avatar { background: linear-gradient(135deg, #1A6DB5, #5BA4D9); }
+  .team-g3 .member-avatar { background: linear-gradient(135deg, #1A7A55, #40C896); }
+  .team-g4 .member-avatar { background: linear-gradient(135deg, #9A4010, #E07835); }
+
+  .member-info { flex: 1; min-width: 0; }
+  .member-name {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .member-niche {
+    font-size: 11px; color: var(--muted); margin-top: 1px;
+  }
+  .member-links { display: flex; gap: 12px; flex-shrink: 0; }
+  .member-link {
+    font-size: 11px; font-weight: 600; color: var(--purple);
+    text-decoration: none; transition: color 0.15s;
+  }
+  .member-link:hover { color: var(--violet); text-decoration: underline; }
+  .member-skills {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;
+  }
+  .skill-tag {
+    font-size: 10px; color: var(--purple);
+    background: #F3EEFF; border-radius: 100px;
+    padding: 2px 8px; font-weight: 500;
+  }
+
+  /* ── AGENDA ── */
+  .agenda-wrap { margin-top: 8px; }
+  .journey-block { margin-bottom: 6px; }
+  .journey-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 8px 14px 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .journey-label.start  { color: #1A7A55; }
+  .journey-label.proj   { color: var(--purple); }
+  .journey-label.explore{ color: #C47A10; }
+
+  .agenda-item {
+    display: flex; align-items: stretch; gap: 0;
+    margin-bottom: 3px;
+  }
+  .agenda-date {
+    width: 100px; flex-shrink: 0;
+    padding: 12px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--purple);
+    background: #F8F4FF;
+    border-radius: 12px 0 0 12px;
+    display: flex; align-items: center;
+    border: 1px solid #E9E0FA; border-right: none;
+  }
+  .agenda-content {
+    flex: 1; padding: 12px 16px;
+    background: var(--white);
+    border: 1px solid #E9E0FA; border-left: none;
+    border-radius: 0 12px 12px 0;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .agenda-title {
+    font-size: 13.5px; font-weight: 500; color: var(--text);
+  }
+  .agenda-chip {
+    font-size: 10px; font-weight: 600;
+    padding: 3px 10px; border-radius: 100px;
+    white-space: nowrap; flex-shrink: 0; margin-left: 10px;
+    font-family: 'Space Mono', monospace; letter-spacing: 0.04em;
+  }
+  .chip-mentor { background: #EEF3FF; color: #4465C5; }
+  .chip-jury   { background: #FFF3EE; color: #C46020; }
+  .chip-start  { background: #EEFAF4; color: #1A7A55; }
+  .chip-finale { background: #FFFBEA; color: #9A6A00; }
+  .chip-offline { background: #F0FDF4; color: #15803D; border: 1px solid #DCFCE7; }
+
+  .agenda-divider {
+    height: 1px; background: linear-gradient(90deg, transparent, #E0D8F5, transparent);
+    margin: 10px 0;
+  }
+
+  /* ── ACCEPTANCE FORM ── */
+  .form-section {
+    background: linear-gradient(160deg, #0A0A0F 0%, #1A0B3B 100%);
+    padding: 44px 48px;
+    position: relative; overflow: hidden;
+  }
+  .form-section::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(108,63,197,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .form-section::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -60px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .form-inner { position: relative; z-index: 2; }
+  .form-timer {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(240,192,64,0.12);
+    border: 1px solid rgba(240,192,64,0.3);
+    border-radius: 100px; padding: 8px 18px;
+    margin-bottom: 24px;
+  }
+  .timer-icon { font-size: 16px; animation: pulse 1.5s infinite; }
+  .timer-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px; color: var(--gold);
+    font-weight: 700; letter-spacing: 0.06em;
+  }
+  .form-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 900; color: var(--white);
+    line-height: 1.25; margin-bottom: 10px;
+  }
+  .form-heading span { color: var(--glow); font-style: italic; }
+  .form-subtext {
+    font-size: 14px; color: rgba(255,255,255,0.5);
+    font-weight: 300; line-height: 1.65; margin-bottom: 32px;
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-label {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; padding: 13px 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(167,139,250,0.2);
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; color: var(--white);
+    outline: none; transition: border-color 0.2s, background 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--glow);
+    background: rgba(167,139,250,0.08);
+  }
+  .form-select { cursor: pointer; }
+  .form-select option { background: #1A0B3B; color: var(--white); }
+  .form-textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+  .form-row { display: flex; gap: 14px; }
+  .form-row .form-group { flex: 1; }
+
+  .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+  .checkbox-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    cursor: pointer;
+  }
+  .checkbox-item input[type="checkbox"] {
+    width: 18px; height: 18px; flex-shrink: 0;
+    appearance: none; -webkit-appearance: none;
+    border: 2px solid rgba(167,139,250,0.4);
+    border-radius: 5px; background: transparent;
+    cursor: pointer; margin-top: 1px;
+    transition: all 0.2s;
+  }
+  .checkbox-item input[type="checkbox"]:checked {
+    background: var(--violet);
+    border-color: var(--violet);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L4.5 7.5L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 12px 9px; background-position: center; background-repeat: no-repeat;
+  }
+  .checkbox-label {
+    font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5;
+  }
+  .checkbox-label a { color: var(--glow); }
+
+  .submit-btn {
+    width: 100%; padding: 16px 24px;
+    background: linear-gradient(135deg, var(--purple) 0%, var(--violet) 100%);
+    border: none; border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px; font-weight: 600; color: var(--white);
+    cursor: pointer; margin-top: 28px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 32px rgba(108,63,197,0.45);
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative; overflow: hidden;
+  }
+  .submit-btn::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  }
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(108,63,197,0.6);
+  }
+  .submit-btn:active { transform: translateY(0); }
+
+  /* ── WHATSAPP CTA ── */
+  .wa-section {
+    padding: 36px 48px;
+    background: #F6FFF9;
+    border-top: 1px solid #D4F0E0;
+  }
+  .wa-card {
+    background: linear-gradient(135deg, #075E54 0%, #128C7E 100%);
+    border-radius: 18px; padding: 24px 28px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .wa-icon {
+    width: 52px; height: 52px; flex-shrink: 0;
+    background: rgba(255,255,255,0.15); border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .wa-text { flex: 1; }
+  .wa-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px;
+  }
+  .wa-sub { font-size: 13px; color: rgba(255,255,255,0.7); }
+  .wa-btn {
+    display: inline-block; padding: 11px 22px;
+    background: var(--white); border-radius: 100px;
+    font-size: 13px; font-weight: 700; color: #075E54;
+    text-decoration: none; white-space: nowrap;
+    transition: transform 0.15s;
+  }
+  .wa-btn:hover { transform: scale(1.04); }
+
+  /* ── WHAT'S NEXT ── */
+  .next-section { padding: 40px 48px; background: var(--mist); }
+  .next-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .next-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: var(--white); border-radius: 14px;
+    padding: 18px 20px; border: 1px solid #E4D9F7;
+  }
+  .next-num {
+    width: 32px; height: 32px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--purple), var(--violet));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace; font-size: 12px;
+    font-weight: 700; color: var(--white); flex-shrink: 0;
+  }
+  .next-content { flex: 1; }
+  .next-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .next-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--black);
+    padding: 32px 48px;
+    text-align: center;
+  }
+  .footer-logo {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 16px;
+  }
+  .footer-logo img { height: 24px; width: auto; border-radius: 5px; }
+
+  .footer-tagline {
+    font-size: 13px; color: rgba(255,255,255,0.35);
+    margin-bottom: 20px; font-weight: 300;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .footer-link {
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    text-decoration: none; font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--glow); }
+  .footer-copy {
+    margin-top: 20px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ── QUOTE ── */
+  .quote-band {
+    background: linear-gradient(135deg, var(--purple) 0%, #4A1D9E 100%);
+    padding: 32px 48px; text-align: center;
+  }
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px; color: rgba(255,255,255,0.15);
+    line-height: 0.6; display: block; margin-bottom: 8px;
+  }
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; font-style: italic;
+    color: var(--white); line-height: 1.5; max-width: 440px; margin: 0 auto 12px;
+  }
+  .quote-attr {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.45);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  /* ── SUCCESS STATE ── */
+  .success-state {
+    display: none; text-align: center; padding: 48px 32px;
+  }
+  .success-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: linear-gradient(135deg, #1A7A55, #40C896);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin: 0 auto 20px;
+    box-shadow: 0 8px 32px rgba(26,122,85,0.4);
+  }
+  .success-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 10px;
+  }
+  .success-sub { font-size: 14px; color: rgba(255,255,255,0.55); }
+</style>
+</head>
+<body>
+
+<div class="email-wrap">
+
+  <!-- ══ HERO ══ -->
+  <div class="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-orb1"></div>
+    <div class="hero-orb2"></div>
+    <div class="hero-inner">
+      <div class="logo-row">
+        <a href="https://ambixous.in" target="_blank" style="text-decoration: none; display: flex; align-items: center;">
+          <img src="https://www.ambixous.in/logo.jpg" alt="Ambixous" class="logo-img" />
+        </a>
+        <div class="hero-badge" style="margin-bottom: 0;">
+          <div class="hero-badge-dot"></div>
+          Creator Fellowship · Cohort 01
+        </div>
+      </div>
+      <h1 class="hero-title">You've been<br /><em>selected.</em></h1>
+      <p class="hero-subtitle">Out of everyone who applied, you made it. Welcome to the first-ever Ambixous Creator Fellowship, 3 months that will redefine how you show up as a creator.</p>
+      <div class="hero-meta-row">
+        <div class="hero-meta">
+          <div class="hero-meta-icon">📅</div>
+          <div class="hero-meta-text"><strong>29 Mar – 27 Jun</strong>April to June 2026</div>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-icon">🌐</div>
+          <div class="hero-meta-text"><strong>Mostly Online</strong>Offline Finale</div>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-icon">🎯</div>
+          <div class="hero-meta-text"><strong>12 Fellows</strong>4 Groups</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONGRATS BAND ══ -->
+  <div class="congrats-band">
+    <div class="congrats-label">✦ Official Announcement</div>
+    <div class="congrats-msg">Congratulations, you are now an<br /><span>Ambixous Creator Fellow, Cohort 01.</span></div>
+  </div>
+
+  <!-- ══ OPENING LETTER ══ -->
+  <div class="section">
+    <div class="section-label">From the Founders</div>
+    <h2 class="section-heading">This is your moment.</h2>
+    <p class="section-body">
+      We didn't pick 12 creators who had it all figured out. We picked 12 creators who had the drive to figure it out, people with a point of view, a creative hunger, and the willingness to do the uncomfortable work of becoming a brand.<br /><br />
+      Over the next 13 weeks, you will be challenged, mentored, evaluated, and recognised. You'll work with real brand briefs, present to real juries, and build a body of work that speaks for you long after this fellowship ends.<br /><br />
+      <strong>This is Cohort 01. Everything you do here sets the standard for every cohort that follows.</strong>
+    </p>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">13</div>
+        <div class="stat-label">Weeks of Learning</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Live Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Brand Briefs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Network Value</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEAM STRUCTURE ══ -->
+  <div class="section">
+    <div class="section-label">Your Cohort</div>
+    <h2 class="section-heading">Meet your teams.</h2>
+    <p class="section-body" style="margin-bottom:24px;">You've been placed in a group of creators across different niches, by design. Cross-domain friction creates the best ideas. Find your group, find your people.</p>
+
+    <div class="teams-grid">
+
+      <!-- GROUP 1 -->
+      <div class="team-card team-g1">
+        <div class="team-header">
+          <div class="team-name">⚡ Group 1, The Visionaries</div>
+          <div class="team-count">3 Members · Food · Lifestyle · Tech</div>
+        </div>
+        <div class="team-members">
+          <div class="member-row">
+            <div class="member-avatar">RP</div>
+            <div class="member-info">
+              <div class="member-name">Rahul Prabhakar</div>
+              <div class="member-niche">Food &amp; Travel</div>
+              <div class="member-skills">
+                <span class="skill-tag">Video Editor</span>
+                <span class="skill-tag">Photographer</span>
+                <span class="skill-tag">Writer</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/rahulprabhakar" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/rahulprabhakar" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">SC</div>
+            <div class="member-info">
+              <div class="member-name">Siya Choudhary</div>
+              <div class="member-niche">Lifestyle</div>
+              <div class="member-skills">
+                <span class="skill-tag">Video Editor</span>
+                <span class="skill-tag">Content Creator</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/choudhary-siya/" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/soyasauce_121" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">KM</div>
+            <div class="member-info">
+              <div class="member-name">Krishna N Mehta</div>
+              <div class="member-niche">Tech</div>
+              <div class="member-skills">
+                <span class="skill-tag">Graphic Designer</span>
+                <span class="skill-tag">Content Creator</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/krishna-n-mehta" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/unscripted.tech/" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 2 -->
+      <div class="team-card team-g2">
+        <div class="team-header">
+          <div class="team-name">🚀 Group 2, The Builders</div>
+          <div class="team-count">3 Members · StartUp · Gaming · Tech</div>
+        </div>
+        <div class="team-members">
+          <div class="member-row">
+            <div class="member-avatar">VE</div>
+            <div class="member-info">
+              <div class="member-name">Venkat</div>
+              <div class="member-niche">StartUp</div>
+              <div class="member-skills">
+                <span class="skill-tag">Content Creator</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/saivenkatchintala" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/venkatunfiltered" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">AM</div>
+            <div class="member-info">
+              <div class="member-name">Abhay Mishra</div>
+              <div class="member-niche">Gaming</div>
+              <div class="member-skills">
+                <span class="skill-tag">Video Editor</span>
+                <span class="skill-tag">Graphic Designer</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/abhay-mishra-04a442315" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://m.youtube.com/@bravey2007" target="_blank" class="member-link">YouTube</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">PA</div>
+            <div class="member-info">
+              <div class="member-name">Prashasti Agarwal</div>
+              <div class="member-niche">Tech</div>
+              <div class="member-skills">
+                <span class="skill-tag">Video Editor</span>
+                <span class="skill-tag">Writer / Storyteller</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/agarwalprashasti" target="_blank" class="member-link">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 3 -->
+      <div class="team-card team-g3">
+        <div class="team-header">
+          <div class="team-name">🌱 Group 3, The Storytellers</div>
+          <div class="team-count">3 Members · Lifestyle · Marketing · Tech</div>
+        </div>
+        <div class="team-members">
+          <div class="member-row">
+            <div class="member-avatar">LD</div>
+            <div class="member-info">
+              <div class="member-name">Lavanya Dua</div>
+              <div class="member-niche">Lifestyle</div>
+              <div class="member-skills">
+                <span class="skill-tag">Portfolio Builder</span>
+                <span class="skill-tag">Community</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/lavanyaduadesign/" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/lavanya.duaa" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">SP</div>
+            <div class="member-info">
+              <div class="member-name">Srujal Pawar</div>
+              <div class="member-niche">Marketing</div>
+              <div class="member-skills">
+                <span class="skill-tag">Video Editor</span>
+                <span class="skill-tag">Content Creator</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/srujalpawar/" target="_blank" class="member-link">LinkedIn</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">SV</div>
+            <div class="member-info">
+              <div class="member-name">Shrishti Vaish</div>
+              <div class="member-niche">Tech</div>
+              <div class="member-skills">
+                <span class="skill-tag">Writer / Storyteller</span>
+                <span class="skill-tag">Content Creator</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/shrishti-vaish" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/datanshrish" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUP 4 -->
+      <div class="team-card team-g4">
+        <div class="team-header">
+          <div class="team-name">🔥 Group 4, The Originals</div>
+          <div class="team-count">3 Members · Fashion · Motivational · Tech</div>
+        </div>
+        <div class="team-members">
+          <div class="member-row">
+            <div class="member-avatar">SK</div>
+            <div class="member-info">
+              <div class="member-name">Sakshi</div>
+              <div class="member-niche">Fashion</div>
+              <div class="member-skills">
+                <span class="skill-tag">Graphic Designer</span>
+                <span class="skill-tag">Still figuring it out ✨</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.instagram.com/timeflowsby" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">KS</div>
+            <div class="member-info">
+              <div class="member-name">Krishna Sharma</div>
+              <div class="member-niche">Motivational</div>
+              <div class="member-skills">
+                <span class="skill-tag">Video Editor</span>
+                <span class="skill-tag">Photographer</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/krishna-sharma-387781258" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/eminencexk" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-avatar">SG</div>
+            <div class="member-info">
+              <div class="member-name">Surya Gupta</div>
+              <div class="member-niche">Tech</div>
+              <div class="member-skills">
+                <span class="skill-tag">Writer / Storyteller</span>
+                <span class="skill-tag">Social Media</span>
+              </div>
+            </div>
+            <div class="member-links">
+              <a href="https://www.linkedin.com/in/surya-gupta-ai" target="_blank" class="member-link">LinkedIn</a>
+              <a href="https://www.instagram.com/suryaweb3" target="_blank" class="member-link">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ AGENDA ══ -->
+  <div class="section">
+    <div class="section-label">Program Timeline</div>
+    <h2 class="section-heading">Your 13-week journey.</h2>
+    <p class="section-body" style="margin-bottom:24px;">Every session builds on the last. Every jury round sharpens you. Every project adds to your portfolio. This is the arc.</p>
+
+    <div class="agenda-wrap">
+
+      <!-- START -->
+      <div class="journey-block">
+        <div class="journey-label start">▶ START, Kickoff</div>
+        <div class="agenda-item">
+          <div class="agenda-date">29 Mar</div>
+          <div class="agenda-content">
+            <span class="agenda-title">🎙 Orientation Session</span>
+            <span class="agenda-chip chip-start">KICKOFF</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- PROJECT 1 -->
+      <div class="journey-block">
+        <div class="journey-label proj">◆ PROJECT 1, Personal Branding</div>
+        <div class="agenda-item">
+          <div class="agenda-date">4 Apr</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Personal Branding Mentorship Session</span>
+            <span class="agenda-chip chip-mentor">MENTORSHIP</span>
+          </div>
+        </div>
+        <div style="height:3px"></div>
+        <div class="agenda-item">
+          <div class="agenda-date">11 Apr</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Personal Branding Jury Round</span>
+            <span class="agenda-chip chip-jury">JURY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- PROJECT 2 -->
+      <div class="journey-block">
+        <div class="journey-label proj">◆ PROJECT 2, Design (Graphics)</div>
+        <div class="agenda-item">
+          <div class="agenda-date">18 Apr</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Design Mentorship Session (Graphics)</span>
+            <span class="agenda-chip chip-mentor">MENTORSHIP</span>
+          </div>
+        </div>
+        <div style="height:3px"></div>
+        <div class="agenda-item">
+          <div class="agenda-date">25 Apr</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Design Mentorship Jury (Graphics)</span>
+            <span class="agenda-chip chip-jury">JURY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- PROJECT 3 -->
+      <div class="journey-block">
+        <div class="journey-label proj">◆ PROJECT 3, Design (Video)</div>
+        <div class="agenda-item">
+          <div class="agenda-date">2 May</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Design Mentorship Session (Video)</span>
+            <span class="agenda-chip chip-mentor">MENTORSHIP</span>
+          </div>
+        </div>
+        <div style="height:3px"></div>
+        <div class="agenda-item">
+          <div class="agenda-date">9 May</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Design Mentorship Jury (Video)</span>
+            <span class="agenda-chip chip-jury">JURY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- PROJECT 4 -->
+      <div class="journey-block">
+        <div class="journey-label proj">◆ PROJECT 4, Product Launch (FinTech)</div>
+        <div class="agenda-item">
+          <div class="agenda-date">16 May</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Product Launch Mentorship Session (FinTech)</span>
+            <span class="agenda-chip chip-mentor">MENTORSHIP</span>
+          </div>
+        </div>
+        <div style="height:3px"></div>
+        <div class="agenda-item">
+          <div class="agenda-date">23 May</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Product Launch Jury (FinTech)</span>
+            <span class="agenda-chip chip-jury">JURY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- PROJECT 5 -->
+      <div class="journey-block">
+        <div class="journey-label proj">◆ PROJECT 5, Product Launch (F&amp;B)</div>
+        <div class="agenda-item">
+          <div class="agenda-date">30 May</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Product Launch Mentorship (Food &amp; Beverage)</span>
+            <span class="agenda-chip chip-mentor">MENTORSHIP</span>
+          </div>
+        </div>
+        <div style="height:3px"></div>
+        <div class="agenda-item">
+          <div class="agenda-date">6 Jun</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Product Launch Jury (Food &amp; Beverage)</span>
+            <span class="agenda-chip chip-jury">JURY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- PROJECT 6 -->
+      <div class="journey-block">
+        <div class="journey-label proj">◆ PROJECT 6, Creator Digital Toolkit</div>
+        <div class="agenda-item">
+          <div class="agenda-date">13 Jun</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Creator Digital Toolkit Mentorship Session</span>
+            <span class="agenda-chip chip-mentor">MENTORSHIP</span>
+          </div>
+        </div>
+        <div style="height:3px"></div>
+        <div class="agenda-item">
+          <div class="agenda-date">20 Jun</div>
+          <div class="agenda-content">
+            <span class="agenda-title">Creator Digital Toolkit Mentorship Jury</span>
+            <span class="agenda-chip chip-jury">JURY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-divider"></div>
+
+      <!-- EXPLORE -->
+      <div class="journey-block">
+        <div class="journey-label explore">★ EXPLORE, Grand Finale</div>
+        <div class="agenda-item">
+          <div class="agenda-date">27 Jun</div>
+          <div class="agenda-content">
+            <span class="agenda-title">🏆 Founder × Creator MeetUp, Demo Day</span>
+            <div style="display: flex; gap: 4px; align-items: center;">
+              <span class="agenda-chip chip-offline">OFFLINE</span>
+              <span class="agenda-chip chip-finale" style="margin-left:0;">FINALE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ QUOTE BAND ══ -->
+  <div class="quote-band">
+    <span class="quote-mark">"</span>
+    <div class="quote-text">The best time to build your brand was yesterday. The second best time is the next 13 weeks.</div>
+    <div class="quote-attr">, Ambixous Creator Fellowship · Cohort 01</div>
+  </div>
+
+  <!-- ══ ACCEPTANCE FORM ══ -->
+  <div class="form-section">
+    <div class="form-inner">
+      <div class="form-timer">
+        <span class="timer-icon">⏳</span>
+        <span class="timer-text">Accept within 24 hours of receiving this email</span>
+      </div>
+      <h2 class="form-heading">Confirm your<br /><span>acceptance.</span></h2>
+      <p class="form-subtext">Your spot is reserved, but not yet confirmed. Click the button below to complete your registration via Google Forms and lock in your place in Cohort 01. Spots not confirmed within 24 hours may be offered to the waitlist.</p>
+
+      <div style="margin-top: 32px;">
+        <a href="https://forms.gle/AZpTkbBko5ZcCyXK6" target="_blank" class="submit-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px;">
+          <span>✦</span> Confirm My Acceptance, I'm In
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ WHATSAPP ══ -->
+  <div class="wa-section">
+    <div class="section-label" style="margin-bottom:16px;">Community</div>
+    <div class="wa-card">
+      <div class="wa-icon">💬</div>
+      <div class="wa-text">
+        <div class="wa-title">Join the Fellowship WhatsApp Group</div>
+        <div class="wa-sub">Where announcements drop, peers connect, and the fellowship culture lives. Join now, your cohort is already there.</div>
+      </div>
+      <a href="https://chat.whatsapp.com/DRChgYMQlrN4sa0vIvCyIi" target="_blank" class="wa-btn">Join Now →</a>
+    </div>
+  </div>
+
+  <!-- ══ WHAT'S NEXT ══ -->
+  <div class="next-section">
+    <div class="section-label">Next Steps</div>
+    <h2 class="section-heading" style="margin-bottom:4px;">What happens after you accept.</h2>
+    <div class="next-grid">
+      <div class="next-item">
+        <div class="next-num">01</div>
+        <div class="next-content">
+          <div class="next-title">Submit your acceptance form above</div>
+          <div class="next-desc">Fill every field. The 'one thing you want to walk away with' answer will be shared with your mentor before your first session.</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">02</div>
+        <div class="next-content">
+          <div class="next-title">Join the WhatsApp group</div>
+          <div class="next-desc">Introduce yourself with your name, niche, and one creator you're inspired by. First impressions are content too.</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">03</div>
+        <div class="next-content">
+          <div class="next-title">Update your bio, you've earned it</div>
+          <div class="next-desc">Add <strong>"Ambixous Creator Fellow | Cohort 01"</strong> to your LinkedIn and Instagram bio. You're not a student. You're a Fellow.</div>
+        </div>
+      </div>
+      <div class="next-item">
+        <div class="next-num">04</div>
+        <div class="next-content">
+          <div class="next-title">Show up on 29th March, Orientation</div>
+          <div class="next-desc">The Google Meet link will be shared in the WhatsApp group 24 hours before. Come prepared to introduce the creator you're becoming, not who you are today.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="footer">
+    <div class="footer-logo">
+      <a href="https://ambixous.in" target="_blank" style="text-decoration: none; display: flex; align-items: center;">
+        <img src="https://www.ambixous.in/logo.jpg" alt="Ambixous" />
+      </a>
+      <div class="hero-badge" style="margin-bottom: 0; padding: 4px 12px; font-size: 10px; background: rgba(255,255,255,0.05);">
+        <div class="hero-badge-dot" style="width: 5px; height: 5px;"></div>
+        Creator Fellowship · Cohort 01
+      </div>
+    </div>
+    <div class="footer-tagline">Build. Connect. Grow. Together.</div>
+    <div class="footer-links">
+      <a href="https://ambixous.in" target="_blank" class="footer-link">Website</a>
+      <a href="https://www.ambixous.in/community" target="_blank" class="footer-link">Community</a>
+      <a href="https://www.ambixous.in/mentors" target="_blank" class="footer-link">Mentors</a>
+      <a href="https://www.ambixous.in/events" target="_blank" class="footer-link">Events</a>
+      <a href="mailto:hi.ambixous@gmail.com" class="footer-link">hi.ambixous@gmail.com</a>
+    </div>
+    <div class="footer-copy">© 2026 Ambixous Innovations LLP · Creator Fellowship · Cohort 01</div>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>
